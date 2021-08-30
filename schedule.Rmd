@@ -1,0 +1,23 @@
+---
+title: "Schedule"
+---
+
+
+
+
+| Date | Module | Lectures | Live Session | Homework |
+|:--------------- |:------------------ |:-------------------------------|:---:|:----------------------------------:|
+| 9/8 - 9/10 | What is Data Science? | [What is Data Science?](what_is_ds_i.html) | 9/8 | [HW 0](homework_0.html) (due 9/11, 10pm) |
+| 9/10 - 9/19 | Building Blocks | [Best Practices](best_practices.html); [Writing with Data](writing_with_data.html); [Version Control](git.html) | 9/15 | [HW 1](homework_1.html) (due 9/19, 10pm) |
+| 9/21 - 9/30 | Data Wrangling I | [Data Import](data_import.html); [Data Manipulation](data_manipulation.html); [Tidy Data](tidy_data.html) | 9/24 | [HW 2](homework_2.html) (due 9/30, 10pm) |
+| 10/1 - 10/10 | Visualization & EDA | [Visualization 1](visualization_pt1.html); [Visualization 2](visualization_pt2.html); [EDA](exploratory_analysis.html) | 10/6 | [HW 3](homework_3.html) (due 10/10, 10pm) |
+| 10/12 - 10/14 | Case Study | [Case Study](what_is_ds_ii.html) | 10/13 |  |
+| 10/15 - 10/25 | Data Wrangling II | [Reading Data from the Web](reading_data_from_the_web.html); [Strings and Factors](strings_and_factors.html) | 10/20 | [Midterm](midterm_project.html) (due 10/25, 10pm) |
+| 10/26 - 11/4 | Interactivity | [Making Websites](making_websites.html); [Plot.ly and Dashboards](plotly_and_dashboards.html) | 10/29 | [HW 4](homework_4.html) (due 11/4, 10pm); [Final](final_project.html) (due TBD) |
+| 11/5 - 11/18 | Iteration | [Writing Functions](writing_functions.html); [Iteration and Listcols](iteration_and_listcols.html); [Simulations](simulation.html) | 11/10 | [HW 5](homework_5.html) (due 11/18, 10pm) |
+| 11/19 - 12/4 | Linear Models | [Linear Models](linear_models.html); [Cross-validation](cross_validation.html); [Bootstrapping](bootstrapping.html) | 11/24 | [HW 6](homework_6.html) (due 12/4, 10pm) |
+| 12/4 - 12/7 | Extra Topics | [TBD](); [TBD]() | TBD | [HW 7](homework_7.html) (due 12/11, 10pm) |
+
+
+
+
