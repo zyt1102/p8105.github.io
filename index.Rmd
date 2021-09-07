@@ -7,37 +7,22 @@ title: "P8105"
 
 Contemporary biostatistics and data analysis depends on the mastery of tools for computation, exploratory analysis, visualization, dissemination, and reproducibility, in addition to proficiency in traditional statistical techniques. The goal of this course is to provide training in the elements of a complete pipeline for data analysis. We will develop skills in data wrangling, reproducible research, software development, collaboration, and effective communication; all programming will be done in R. Although there are no formal prerequisites for this course, some familiarity with statistics and basic programming knowledge will be helpful.
 
-This course is being offered in the Fall of 2020 through the Biostatistics Department at the Columbia School of Public Health; the syllabus is available here [[pdf](resources/P8105_Syllabus.pdf) | [docx](resources/P8105_Syllabus.docx)].
+This course is being offered in the Fall of 2021 through the Biostatistics Department at the Columbia School of Public Health; the syllabus is available here [[pdf](resources/P8105_Syllabus.pdf) | [docx](resources/P8105_Syllabus.docx)].
 
-### Live Sessions
-
-Live (synchronous) sessions will be held on the following dates:
-
-* 9/8 (What is Data Science?)
-* 9/15 (Building Blocks)
-* 9/24 (Data Wrangling I)
-* 10/6 (Visualization & EDA)
-* 10/13 (Case Study)
-* 10/20 (Data Wrangling II)
-* 10/29 (Interactivity)
-* 11/10 (Iteration)
-* 11/24 (Linear Models)
-* TBD (Extra Topics)
-
-Zoom information for live sessions is available through Courseworks.
 
 ### People
 
 * Jeff Goldsmith (Instructor; ajg2202)
 * Margaret Gacheru (Lead TA; mg3861)
-* Hana Akbarnejad (ha2546)
-* Bryan Bunning (bjb2178)
-* Junxian Chen (jc5314)
-* Gavin Ko (wk2343)
-* Sibei Liu (sl4660)
-* Robert Tumasian III (rat2134)
-* Yuanzhi Yu (yy3019)
-* Duzhi Zhao (dz2426)
+* Tessa Senders (Lead TA; ts3349)
+* Caroline Andy
+* Nikhita Damaraju
+* Rachel Heise
+* Chong Li
+* Zhuohui Liang
+* Phoebe Mo
+* Yan Rio
+* Lihn Tran
 
 <!--
 ### Calendar
