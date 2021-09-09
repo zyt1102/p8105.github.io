@@ -21,8 +21,8 @@ This course is being offered in the Fall of 2021 through the Biostatistics Depar
 * Chong Li
 * Zhuohui Liang
 * Phoebe Mo
-* Yan Rio
-* Lihn Tran
+* Linh Tran
+* Rio Yan
 
 <!--
 ### Calendar
