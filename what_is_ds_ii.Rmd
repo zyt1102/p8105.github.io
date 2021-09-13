@@ -42,17 +42,6 @@ Pull together skills learned through this point to produce analytical summaries 
 
 ***
 
-### Video Lecture
-
-<div class="vid_container">
-  <iframe 
-    src="https://www.youtube.com/embed/oHg5SJYRHA0"
-    frameborder="0" allowfullscreen class="video">
-  </iframe>
-</div>
-
-***
-
 
 ## Example
 

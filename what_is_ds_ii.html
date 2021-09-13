@@ -13,12 +13,22 @@
 
 <title>What is Data Science?</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
@@ -41,12 +51,16 @@
   gtag('config', 'UA-151578452-1');
 </script>
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -59,32 +73,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -95,10 +84,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -115,40 +100,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -176,7 +134,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -188,7 +146,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -199,10 +157,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -214,7 +185,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -340,7 +310,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -452,7 +422,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -463,10 +433,10 @@ div.tocify {
 
 <p>We have, by now, established some fundamental tools for doing data science. It’s important to revisit our definition, and especially our discussion of connotation, before moving forward.</p>
 <div id="overview" class="section level2 tabset tabset-pills">
-<h2>Overview</h2>
+<h2 class="tabset tabset-pills">Overview</h2>
 <div id="learning-objectives" class="section level3">
 <h3>Learning Objectives</h3>
-<p>Pull together skills learned through this point to compile analytical summaries and reports.</p>
+<p>Pull together skills learned through this point to produce analytical summaries and reports.</p>
 </div>
 <div id="slide-deck" class="section level3">
 <h3>Slide Deck</h3>
@@ -483,15 +453,6 @@ div.tocify {
 <p><br></p>
 <hr />
 </div>
-<div id="video-lecture" class="section level3">
-<h3>Video Lecture</h3>
-<div class="vid_container">
-<p><iframe 
-    src="https://www.youtube.com/embed/oHg5SJYRHA0"
-    frameborder="0" allowfullscreen class="video"> </iframe></p>
-</div>
-<hr />
-</div>
 </div>
 <div id="example" class="section level2">
 <h2>Example</h2>
@@ -505,37 +466,35 @@ data(nyc_airbnb)</code></pre>
 <p>First, let’s take a few minutes to understand the dataset and the variables it contains.</p>
 <pre class="r"><code># View(nyc_airbnb)
 str(nyc_airbnb)
-## Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 40753 obs. of  17 variables:
-##  $ id                            : num  7949480 16042478 1886820 6627449 5557381 ...
-##  $ review_scores_location        : num  10 NA NA 10 10 10 10 9 10 9 ...
-##  $ name                          : chr  &quot;City Island Sanctuary relaxing BR &amp; Bath w Parking&quot; &quot;WATERFRONT STUDIO APARTMENT&quot; &quot;Quaint City Island Community.&quot; &quot;Large 1 BDRM in Great location&quot; ...
-##  $ host_id                       : num  119445 9117975 9815788 13886510 28811542 ...
-##  $ host_name                     : chr  &quot;Linda &amp; Didier&quot; &quot;Collins&quot; &quot;Steve&quot; &quot;Arlene&quot; ...
-##  $ neighbourhood_group           : chr  &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; ...
-##  $ neighbourhood                 : chr  &quot;City Island&quot; &quot;City Island&quot; &quot;City Island&quot; &quot;City Island&quot; ...
-##  $ lat                           : num  -73.8 -73.8 -73.8 -73.8 -73.8 ...
-##  $ long                          : num  40.9 40.9 40.8 40.8 40.9 ...
-##  $ room_type                     : chr  &quot;Private room&quot; &quot;Private room&quot; &quot;Entire home/apt&quot; &quot;Entire home/apt&quot; ...
-##  $ price                         : num  99 200 300 125 69 125 85 39 95 125 ...
-##  $ minimum_nights                : num  1 7 7 3 3 2 1 2 3 2 ...
-##  $ number_of_reviews             : num  25 0 0 12 86 41 74 114 5 206 ...
-##  $ last_review                   : Date, format: &quot;2017-04-23&quot; NA ...
-##  $ reviews_per_month             : num  1.59 NA NA 0.54 3.63 2.48 5.43 2.06 5 2.98 ...
-##  $ calculated_host_listings_count: num  1 1 1 1 1 1 1 4 3 4 ...
-##  $ availability_365              : num  170 180 365 335 352 129 306 306 144 106 ...
-
+## spec_tbl_df [40,753 × 17] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ id                            : num [1:40753] 7949480 16042478 1886820 6627449 5557381 ...
+##  $ review_scores_location        : num [1:40753] 10 NA NA 10 10 10 10 9 10 9 ...
+##  $ name                          : chr [1:40753] &quot;City Island Sanctuary relaxing BR &amp; Bath w Parking&quot; &quot;WATERFRONT STUDIO APARTMENT&quot; &quot;Quaint City Island Community.&quot; &quot;Large 1 BDRM in Great location&quot; ...
+##  $ host_id                       : num [1:40753] 119445 9117975 9815788 13886510 28811542 ...
+##  $ host_name                     : chr [1:40753] &quot;Linda &amp; Didier&quot; &quot;Collins&quot; &quot;Steve&quot; &quot;Arlene&quot; ...
+##  $ neighbourhood_group           : chr [1:40753] &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; &quot;Bronx&quot; ...
+##  $ neighbourhood                 : chr [1:40753] &quot;City Island&quot; &quot;City Island&quot; &quot;City Island&quot; &quot;City Island&quot; ...
+##  $ lat                           : num [1:40753] -73.8 -73.8 -73.8 -73.8 -73.8 ...
+##  $ long                          : num [1:40753] 40.9 40.9 40.8 40.8 40.9 ...
+##  $ room_type                     : chr [1:40753] &quot;Private room&quot; &quot;Private room&quot; &quot;Entire home/apt&quot; &quot;Entire home/apt&quot; ...
+##  $ price                         : num [1:40753] 99 200 300 125 69 125 85 39 95 125 ...
+##  $ minimum_nights                : num [1:40753] 1 7 7 3 3 2 1 2 3 2 ...
+##  $ number_of_reviews             : num [1:40753] 25 0 0 12 86 41 74 114 5 206 ...
+##  $ last_review                   : Date[1:40753], format: &quot;2017-04-23&quot; NA ...
+##  $ reviews_per_month             : num [1:40753] 1.59 NA NA 0.54 3.63 2.48 5.43 2.06 5 2.98 ...
+##  $ calculated_host_listings_count: num [1:40753] 1 1 1 1 1 1 1 4 3 4 ...
+##  $ availability_365              : num [1:40753] 170 180 365 335 352 129 306 306 144 106 ...
 nyc_airbnb %&gt;%
   count(room_type)
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   room_type           n
 ##   &lt;chr&gt;           &lt;int&gt;
 ## 1 Entire home/apt 19937
 ## 2 Private room    19626
 ## 3 Shared room      1190
-
 nyc_airbnb %&gt;%
   count(neighbourhood_group)
-## # A tibble: 5 x 2
+## # A tibble: 5 × 2
 ##   neighbourhood_group     n
 ##   &lt;chr&gt;               &lt;int&gt;
 ## 1 Bronx                 649
@@ -589,7 +548,7 @@ nyc_airbnb %&gt;%
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -607,7 +566,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -616,6 +575,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
@@ -628,7 +590,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
