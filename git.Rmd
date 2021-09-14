@@ -162,7 +162,7 @@ Sharing repositories via GitHub makes it possible to collaborate in a clear, rig
 
 This is great if you're working in a team, or if you are considering future-you as a collaborator.
 
-For the repository holding this example, I'll add Angel as a collaborator. Once she's been added, she's going to add a histogram of `y` to our basic plot RMD. He'll commit and push; I'll relax until he's done, then pull her changes from the remote repository to my local repository. Those changes will appear in my local repository, and a summary of the changes are in my git history. 
+For the repository holding this example, I'll add Angel as a collaborator. Once he's been added, he's going to add a histogram of `y` to our basic plot RMD. He'll commit and push; I'll relax until he's done, then pull his changes from the remote repository to my local repository. Those changes will appear in my local repository, and a summary of the changes are in my git history. 
 
 <img src="images/git_collab_commit.png" style="width:80%">
 
@@ -185,7 +185,7 @@ We've both written text in the same place, and have to make a decision about whi
 
 <img src="images/git_conflict_tool.png" style="width:80%">
 
-After resolving conflicts, should commit the changes and push the new unified version to the remote repository.
+After resolving conflicts, I should commit the changes and push the new unified version to the remote repository.
 
 Merge conflicts are a fact of life in collaborative work, and you probably run into them more often than you'd like to admit (e.g. "Jeff's Conflicted Copy" in Dropbox, or parallel versions of Word documents). Git can seem like it makes this worse, but that's mostly because it's new and scary, and it forces you to address conflicts as they arise in a structured way rather than ignoring issues / managing them in an ad-hoc way. 
 

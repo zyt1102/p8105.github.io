@@ -597,7 +597,7 @@ ggplot(plot_df, aes(x = x, y = y)) + geom_point()
 <li>line-by-line comparisons (additions and deletions) show exactly what was changed.</li>
 </ul>
 <p>This is great if you’re working in a team, or if you are considering future-you as a collaborator.</p>
-<p>For the repository holding this example, I’ll add Angel as a collaborator. Once she’s been added, she’s going to add a histogram of <code>y</code> to our basic plot RMD. He’ll commit and push; I’ll relax until he’s done, then pull her changes from the remote repository to my local repository. Those changes will appear in my local repository, and a summary of the changes are in my git history.</p>
+<p>For the repository holding this example, I’ll add Angel as a collaborator. Once he’s been added, he’s going to add a histogram of <code>y</code> to our basic plot RMD. He’ll commit and push; I’ll relax until he’s done, then pull his changes from the remote repository to my local repository. Those changes will appear in my local repository, and a summary of the changes are in my git history.</p>
 <p><img src="images/git_collab_commit.png" style="width:80%"></p>
 <p>Of course, team members may want to work in parallel. As an example, I’ll edit the README a bit and Angel will edit the template RMD file. Once I’ve written my code, I’m going to commit; pull to see if there are any changes in the remote repository; and then push everything.</p>
 <p><img src="images/git_parallel_code.png" style="width:80%"></p>
@@ -610,7 +610,7 @@ ggplot(plot_df, aes(x = x, y = y)) + geom_point()
 <p><img src="images/git_conflict_notice.png" style="width:80%"></p>
 <p>We’ve both written text in the same place, and have to make a decision about which to keep. You have a couple of options: one is to open the file in question, go through each conflict (which will be indicated in text), fix the text to your liking and remove all the markers that indicate the conflicts. We can also do this with the help of a merge tool, which will show where differences are and allow us to make a choice about which to keep.</p>
 <p><img src="images/git_conflict_tool.png" style="width:80%"></p>
-<p>After resolving conflicts, should commit the changes and push the new unified version to the remote repository.</p>
+<p>After resolving conflicts, I should commit the changes and push the new unified version to the remote repository.</p>
 <p>Merge conflicts are a fact of life in collaborative work, and you probably run into them more often than you’d like to admit (e.g. “Jeff’s Conflicted Copy” in Dropbox, or parallel versions of Word documents). Git can seem like it makes this worse, but that’s mostly because it’s new and scary, and it forces you to address conflicts as they arise in a structured way rather than ignoring issues / managing them in an ad-hoc way.</p>
 <p>That said, try to coordinate with teammates so it’s clear who is working on what and when they’re doing it.</p>
 </div>
