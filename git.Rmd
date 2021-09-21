@@ -129,7 +129,7 @@ The commit messages and git diffs are key features, and will help you understand
 **_Learning Assessment:_** Make some changes to your repo (edit your README, add a file, etc) and commit those changes. 
 
 
-### GitHub
+### Push to GitHub
 
 Git is useful as a version control system all by itself, but it is especially powerful when combined with GitHub. This combination relies on pairing your "local repository" with a "remote repository" -- local is on your computer, remote is in the cloud (i.e. on GitHub's servers). Fortunately, in the "GitHub First" workflow, the local / remote pairing is basically done for you. So, the next step is to "push to remote", a step that drives home the difference between local and remote repositories: you can make local changes and commits, but the remote repository won't know about them until you push. 
 
@@ -138,6 +138,8 @@ Git is useful as a version control system all by itself, but it is especially po
 Once you've pushed, all your commits are viewable on GitHub.
 
 <img src="images/git_gh_after_push.png" style="width:80%">
+
+**Note:** GitHub has a variety of security features. One that will be relevant right now is the use of Personal Access Tokens rather than passwords for pushing to and pulling from remote repositories. There are several useful guides to get help with this. Once you've set up your PAT and try to push, RStudio may prompt you for your GitHub username and password; provide your new PAT, and you're be all set. Fortunately, you should only have to do this once, and the credentials will be stored for later uses. 
 
 GitHub has a lot of features that help as projects grow: issue trackers function as collaborative "to-do" lists, the built-in message system helps coordinate with collaborators, and others. You can also see what other people are working on, follow repos or developers, create your own versions of existing repos, and do other exciting stuff!
 
