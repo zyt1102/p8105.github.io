@@ -73,7 +73,7 @@ Absolute paths are often conceptually easier, because you don't really have to _
 An absolute path example is below:
 
 ```
-"/Users/jeffgoldsmith/Dropbox/Work/Teaching/P8105/fall_20209/p8105.github.io/data/FAS_litters.csv"
+"/Users/jeffgoldsmith/Dropbox/Work/Teaching/P8105/fall_2021/p8105.github.io/data/FAS_litters.csv"
 ```
 
 Relative paths, meanwhile, navigate from your current working directory. Relative paths are portable, in that if you move your directory or share it with someone else, the **relative** path to files in the directory will stay the same and your code will work. For both of these reasons, relative paths are preferred in almost every setting. 
@@ -154,7 +154,7 @@ litters_data
 tail(litters_data, 5)
 ```
 
-Another tool that I use sometimes is `skimr::skim`. The output is too wide to render well here, but is pretty slick! 
+Another tool that I use sometimes is `skimr::skim`, although for me it's more "neat" than useful.
 
 ```{r}
 skimr::skim(litters_data)
