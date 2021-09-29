@@ -66,11 +66,11 @@ options(tibble.print_min = 5)
 In [data import](data_import.html), we used the `haven` package to load the PULSE biomarkers dataset from a .sas7bdat. Let's reload those data and take a closer look:
 
 ```{r}
-pulse_data = 
+pulse_df = 
   haven::read_sas("./data/public_pulse_data.sas7bdat") %>%
   janitor::clean_names()
 
-pulse_data
+pulse_df
 ```
 
 With our new understanding of tidy data, we quickly recognize a problem: the BDI score is spread across four columns, which correspond to four observation times. We can fix this problem using `pivot_longer`:
@@ -78,7 +78,7 @@ With our new understanding of tidy data, we quickly recognize a problem: the BDI
 ```{r}
 pulse_tidy_data = 
   pivot_longer(
-    pulse_data, 
+    pulse_df, 
     bdi_score_bl:bdi_score_12m,
     names_to = "visit", 
     values_to = "bdi")
@@ -91,7 +91,7 @@ This looks much better! However, now `visit` is an issue. The original column na
 ```{r}
 pulse_tidy_data = 
   pivot_longer(
-    pulse_data, 
+    pulse_df, 
     bdi_score_bl:bdi_score_12m,
     names_to = "visit", 
     names_prefix = "bdi_score_",
@@ -105,7 +105,7 @@ In the preceding I've saved intermediate datasets to make each step clear. While
 Altogether, then, the code below will import, tidy, and transform the PULSE dataset into a usable format:
 
 ```{r}
-pulse_data = 
+pulse_df = 
   haven::read_sas("./data/public_pulse_data.sas7bdat") %>%
   janitor::clean_names() %>%
   pivot_longer(
@@ -116,10 +116,10 @@ pulse_data =
   relocate(visit) %>%
   mutate(
     visit = replace(visit, visit == "bl", "00m"),
-    visit = factor(visit, levels = str_c(c("00", "01", "06", "12"), "m"))) %>%
+    visit = factor(visit)) %>%
   arrange(id, visit)
 
-print(pulse_data, n = 12)
+print(pulse_df, n = 12)
 ```
 
 Now we're in pretty okay shape :-).
@@ -133,7 +133,7 @@ The code below shows one approach to this data cleaning process:
 
 ```{r}
 litters_wide = 
-  read_csv("./data/FAS_litters.csv", col_types = "ccddiiii") %>%
+  read_csv("./data/FAS_litters.csv") %>%
   janitor::clean_names() %>%
   select(litter_number, ends_with("weight")) %>% 
   pivot_longer(
@@ -236,12 +236,14 @@ As an example, consider the data tables in `FAS_pups.csv` and `FAS_litters.csv`,
 
 ```{r}
 pup_data = 
-  read_csv("./data/FAS_pups.csv", col_types = "ciiiii") %>%
+  read_csv("./data/FAS_pups.csv") %>%
   janitor::clean_names() %>%
-  mutate(sex = recode(sex, `1` = "male", `2` = "female")) 
+  mutate(
+    sex = recode(sex, `1` = "male", `2` = "female"),
+    sex = factor(sex)) 
 
 litter_data = 
-  read_csv("./data/FAS_litters.csv", col_types = "ccddiiii") %>%
+  read_csv("./data/FAS_litters.csv") %>%
   janitor::clean_names() %>%
   separate(group, into = c("dose", "day_of_tx"), sep = 3) %>%
   relocate(litter_number) %>%
@@ -261,7 +263,7 @@ Note that joining is not particularly amenable to the `%>%` operator because it 
 
 As a final point, the `*_join` functions are very much related to SQL syntax, but emphasize operations common to data analysis. 
 
-**_Learning Assessment:_** The datasets in [this zip file](data/survey_results.zip) contain de-identified responses to surveys included in past years of this course. Both contain a unique student identifier; the first has reponses to a question about operating systems, and the second has responses to questions about degree program and git experience. Write a code chunk that imports and cleans both datasets, and then joins them. 
+**_Learning Assessment:_** The datasets in [this zip file](data/survey_results.zip) contain de-identified responses to surveys included in past years of this course. Both contain a unique student identifier; the first has responses to a question about operating systems, and the second has responses to questions about degree program and git experience. Write a code chunk that imports and cleans both datasets, and then joins them. 
 
 <details>
 <summary> Solution </summary>
